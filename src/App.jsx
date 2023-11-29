@@ -1,33 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Link } from 'react-router-dom'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
+    <main id='gameboy'>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <section id='screen-container'>
+      </section>
+      <h1>Name of company</h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <section id='buttons-container'>
+        <article id='top-buttons'>
+          <div>
+            <div/>
+            <div id='up' className='d-pad'/>
+            <div/>
+            <div id='left' className='d-pad'/>
+            <div id='center' className='d-pad'/>
+            <div id='right' className='d-pad'/>
+            <div/>
+            <div id='down' className='d-pad'/>
+            <div/>            
+          </div>
+          <div>
+            <span>
+              <Link>()</Link>
+              <Link>()</Link>
+            </span>
+          </div>
+          <div></div>
+        </article>
+        <article id='bottom-buttons'>
+          <div>
+            <span><Link>Home ()</Link></span>
+            <span><Link>Policy ()</Link></span>
+          </div>
+        </article>
+      </section>
+    </main>
     </>
   )
 }
