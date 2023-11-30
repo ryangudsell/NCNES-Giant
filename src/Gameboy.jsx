@@ -56,8 +56,8 @@ const Gameboy = () => {
         </article>
         <article id='bottom-buttons'>
           <div>
-            <span><Link to="/shop">Home <HouseDoorFill style={{imageRendering: "pixelated"}} /></Link></span>
-            <span><Link to="/shop">Policy <InfoCircleFill style={{imageRendering: "pixelated"}} /></Link></span>
+            <span><Link to="/">Home <HouseDoorFill style={{imageRendering: "pixelated"}} /></Link></span>
+            <span><Link to="/policy">Policy <InfoCircleFill style={{imageRendering: "pixelated"}} /></Link></span>
           </div>
         </article>
       </section>
