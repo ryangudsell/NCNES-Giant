@@ -33,6 +33,10 @@ const Gameboy = () => {
               <CaretLeftFill style={{imageRendering: "pixelated"}} />
             </div>
             <div id='center' className='d-pad button-hover'>
+              <span className='center-dot dot-one' />
+              <span className='center-dot dot-two' />
+              <span className='center-dot dot-three' />
+              <span className='center-dot dot-four' />
               <CircleFill style={{imageRendering: "pixelated"}} />
             </div>
             <div id='right' className='d-pad button-hover'>
