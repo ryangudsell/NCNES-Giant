@@ -25,21 +25,21 @@ const Gameboy = () => {
         <article id='top-buttons'>
           <div id='d-pad'>
             <div/>
-            <div id='up' className='d-pad'>
+            <div id='up' className='d-pad button-hover'>
               <CaretUpFill style={{imageRendering: "pixelated"}} />
             </div>
             <div/>
-            <div id='left' className='d-pad'>
+            <div id='left' className='d-pad button-hover'>
               <CaretLeftFill style={{imageRendering: "pixelated"}} />
             </div>
-            <div id='center' className='d-pad'>
+            <div id='center' className='d-pad button-hover'>
               <CircleFill style={{imageRendering: "pixelated"}} />
             </div>
-            <div id='right' className='d-pad'>
+            <div id='right' className='d-pad button-hover'>
               <CaretRightFill style={{imageRendering: "pixelated"}} />
             </div>
             <div/>
-            <div id='down' className='d-pad'>
+            <div id='down' className='d-pad button-hover'>
               <CaretDownFill style={{imageRendering: "pixelated"}} />
             </div>
             <div/>            
