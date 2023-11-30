@@ -1,0 +1,130 @@
+// General Styles
+.gameboy-corner {
+    border-radius: 10px 10px 30px 10px;
+}
+
+// Gameboy Styles
+#root {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+#gameboy {
+    background-color: $main-purple;
+    color: $main-grey;
+    width: 400px;
+    min-height: 100vh;
+    height: 100%;
+    padding: 10px;
+
+    #screen-container {
+        background-color: $main-grey;
+        color: $black;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 9fr;
+        gap: 5px;
+        padding: 10px 25px 25px 10px;
+
+        #settings-container {
+            font-size: 12px;
+            height: 100%;
+
+            ul {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 0;
+            }
+
+            button {
+                padding: 0;
+                width: 30px;
+            }
+        }
+    }
+}
+
+#screen {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: $black;
+    color: $white;
+    padding: 5px;
+    box-shadow: inset 0 0 10px 2px $main-grey;
+    aspect-ratio: 10/9;
+}
+
+#buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    height: 100%;
+    padding: 10px 10px 50px;
+    color: $dark-grey;
+    a {
+        color: $dark-grey;
+    }
+
+    #top-buttons {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        width: 100%;
+
+        #d-pad {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            div {
+                height: 40px;
+                aspect-ratio: 1;
+
+                &.d-pad {
+                    background-color: $main-grey;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+
+        #top-button-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                transform: rotate(-35deg);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+            }
+        }
+    }
+
+    #bottom-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    span {
+        font-family: Arial;
+        transform: rotate(-35deg);
+        border-radius: 30px;
+        background-color: $main-grey;
+        color: $black;
+        padding: 8px 10px 10px;
+    }
+}
