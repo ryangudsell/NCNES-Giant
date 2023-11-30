@@ -19,7 +19,7 @@ const Gameboy = () => {
         </article>
         <Screen />
       </section>
-      <label>Logo</label>
+      <label id='gameboy-label'><img src="./logo.png" alt='Giant Logo' />Giant </label>
       </div>
       <section id='buttons-container'>
         <article id='top-buttons'>

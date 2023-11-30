@@ -49,6 +49,12 @@
   padding: 0;
   width: 30px;
 }
+#gameboy #gameboy-label {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
 #screen {
   overflow-x: hidden;

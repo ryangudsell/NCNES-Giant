@@ -5,9 +5,6 @@ const Home = () => {
     <div className='nes-container with-title is-dark'>
       <p className='title'>Home</p>
       <p>Welcome to the Home page</p>
-      <p>Welcome to the Home page</p>
-      <p>Welcome to the Home page</p>
-      <p>Welcome to the Home page</p>
     </div>
   )
 }

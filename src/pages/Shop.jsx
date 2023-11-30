@@ -2,8 +2,9 @@ import React from 'react'
 
 const Shop = () => {
   return (
-    <div>
-      Shop
+    <div className='nes-container with-title is-dark'>
+      <p className='title'>Shop</p>
+      <p>Welcome to the Shop page</p>
     </div>
   )
 }
