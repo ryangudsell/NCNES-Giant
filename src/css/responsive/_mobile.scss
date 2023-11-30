@@ -12,8 +12,8 @@
 }
 
 #gameboy {
-    background-color: $main-purple;
-    color: $main-grey;
+    background-color: $gameboy-grey;
+    color: $black;
     width: 400px;
     min-height: 100vh;
     height: 100%;
@@ -85,6 +85,31 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 1fr 1fr 1fr;
+            #up{
+                border: solid $black 3px;
+                border-bottom-style: none;
+                border-radius: 5px 5px 0px 0px;
+            }
+            #down{
+                border: solid $black 3px;
+                border-top-style: none;
+                border-radius: 0px 0px 5px 5px;
+                border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
+                border-image-slice: 2;
+                border-image-width: 2;
+                border-image-outset: 2;
+                border-image-repeat: stretch;
+            }
+            #left{
+                border: solid $black 3px;
+                border-right-style: none;
+                border-radius: 5px 0px 0px 5px;
+            }
+            #right{
+                border: solid $black 3px;
+                border-left-style: none;
+                border-radius: 0px 5px 5px 0px;
+            }
             div {
                 height: 40px;
                 aspect-ratio: 1;

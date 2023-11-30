@@ -1,12 +1,17 @@
 $main-purple: #675e9d;
 $main-grey: #cccccc;
 $dark-grey: #888888;
+$gameboy-grey: #A6A6A6;
 $black: black;
 $white: white;
 
-p, button, a {
+p,
+button,
+a {
     font-size: 12px;
-    &.title, &.big-text {
-      font-size:16px
+
+    &.title,
+    &.big-text {
+        font-size: 16px
     }
-  }
+}
