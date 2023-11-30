@@ -7,7 +7,7 @@ import Contact from "../pages/Contact"
 
 const Screen = () => {
   return (
-    <article id='screen'>
+    <article id='screen' className='darkmode-toggle'>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/policy" element={<Policy />} />

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Policy = () => {
   return (
-    <div className='nes-container with-title is-dark'>
+    <div className='nes-container with-title darkmode-toggle is-dark'>
       <p className='title'>Policy</p>
 
       <h5>Privacy Policy</h5>
