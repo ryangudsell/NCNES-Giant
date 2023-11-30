@@ -3,7 +3,13 @@ import { Link, useNavigate } from 'react-router-dom'
 import { MoonFill, HouseDoorFill, InfoCircleFill, CartFill, TelephoneFill, CaretUpFill, CaretRightFill, CaretDownFill, CaretLeftFill, CircleFill } from 'react-bootstrap-icons'
 
 const Gameboy = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate()
+
+  const darkmodeToggle = () => {
+    document.querySelectorAll(".darkmode-toggle").forEach(
+      element => element.classList.toggle("is-dark"))
+  }
+
   return (
     <>
       <main id='gameboy' className='gameboy-corner'>
@@ -13,7 +19,8 @@ const Gameboy = () => {
           <ul>
             <div><button className='nes-btn'>+</button>
               <button className='nes-btn'>-</button></div>
-            <button className='nes-btn'><MoonFill style={{imageRendering: "pixelated"}} /></button>
+            {/* Darkmode button */}
+            <button className='nes-btn' onClick={() => darkmodeToggle()}><MoonFill style={{imageRendering: "pixelated"}} /></button>
             <button className='nes-btn' onClick={() => navigate("/")}><HouseDoorFill style={{imageRendering: "pixelated"}} /></button>
           </ul>
         </article>
@@ -33,6 +40,10 @@ const Gameboy = () => {
               <CaretLeftFill style={{imageRendering: "pixelated"}} />
             </div>
             <div id='center' className='d-pad button-hover'>
+              <span className='center-dot dot-one' />
+              <span className='center-dot dot-two' />
+              <span className='center-dot dot-three' />
+              <span className='center-dot dot-four' />
               <CircleFill style={{imageRendering: "pixelated"}} />
             </div>
             <div id='right' className='d-pad button-hover'>

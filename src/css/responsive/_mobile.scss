@@ -60,6 +60,10 @@
     overflow-y: scroll;
     background-color: $black;
     color: $white;
+    &.is-dark {
+        background-color: $white;
+        color: $black;
+    }
     padding: 5px;
     box-shadow: inset 0 0 10px 2px $main-grey;
     aspect-ratio: 10/9;
@@ -107,6 +111,25 @@
                 border-color: #cccccc;
                 background-color: #cccccc;
                 cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer;
+                position: relative;
+
+                .center-dot {
+                    transform: none;
+                    padding: 0;
+                    margin: 0;
+                    background-color: $black;
+                    border: none;
+                    width: 2px;
+                    height: 2px;
+                    border-radius: 0;
+                    position: absolute;
+
+                    &.dot-one {top: 0; left: 0;}
+                    &.dot-two {top: 0; right: .2px;}
+                    &.dot-three {bottom: .2px; left: 0;}
+                    &.dot-four {bottom: .2px; right: .2px;}
+                }
+
             }
             #down{
                 border-top-style: none !important;

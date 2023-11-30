@@ -78,6 +78,10 @@ a.big-text {
   box-shadow: inset 0 0 10px 2px #cccccc;
   aspect-ratio: 10/9;
 }
+#screen.is-dark {
+  background-color: white;
+  color: black;
+}
 
 #buttons-container {
   display: flex;
@@ -123,6 +127,34 @@ a.big-text {
   border-color: #cccccc;
   background-color: #cccccc;
   cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer;
+  position: relative;
+}
+#buttons-container #top-buttons #d-pad #center .center-dot {
+  transform: none;
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  border: none;
+  width: 2px;
+  height: 2px;
+  border-radius: 0;
+  position: absolute;
+}
+#buttons-container #top-buttons #d-pad #center .center-dot.dot-one {
+  top: 0;
+  left: 0;
+}
+#buttons-container #top-buttons #d-pad #center .center-dot.dot-two {
+  top: 0;
+  right: 0.2px;
+}
+#buttons-container #top-buttons #d-pad #center .center-dot.dot-three {
+  bottom: 0.2px;
+  left: 0;
+}
+#buttons-container #top-buttons #d-pad #center .center-dot.dot-four {
+  bottom: 0.2px;
+  right: 0.2px;
 }
 #buttons-container #top-buttons #d-pad #down {
   border-top-style: none !important;

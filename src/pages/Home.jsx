@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const Home = () => {
   const navigate = useNavigate()
   return (
-    <div className='nes-container with-title is-dark'>
+    <div className='nes-container with-title darkmode-toggle is-dark'>
       <p className='title'>Home</p>
       <p>Welcome to the Home page</p>
       <button className='nes-btn'
