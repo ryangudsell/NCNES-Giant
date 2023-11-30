@@ -3,3 +3,10 @@ $main-grey: #cccccc;
 $dark-grey: #888888;
 $black: black;
 $white: white;
+
+p, button, a {
+    font-size: 12px;
+    &.title, &.big-text {
+      font-size:16px
+    }
+  }
