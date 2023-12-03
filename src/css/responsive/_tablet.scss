@@ -1,0 +1,84 @@
+@media screen and (min-width: 900px) {
+.mobile {display: none !important;}
+.tablet {display: block !important;}
+
+#gameboy {
+    width: 900px;
+    min-height: 450px;
+    display: grid; 
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "dpad screen top-buttons" 
+    "bottom-buttons screen vent";
+    .dpad-grid {grid-area: dpad;}
+    .screen-grid {grid-area: screen;}
+    .top-buttons-grid {grid-area: top-buttons;}
+    .bottom-buttons-grid {grid-area: bottom-buttons;}
+    .vent-grid {grid-area: vent;}
+
+    #screen-container {
+        background-color: $main-grey;
+        color: $black;
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 10px 10px 30px;
+        border-radius: 10px;
+
+        #settings-container {
+            font-size: 12px;
+            width: 100%;
+            height: 30px;
+
+            ul {
+                width: 100%;
+                height: 30px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 15px;
+                padding: 10px 0 0;
+            }
+
+            button {
+                padding: 0;
+                width: 30px;
+            }
+        }
+    }
+
+    #gameboy-label {
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+}
+
+#screen {
+    width: 450px;
+}
+
+.screen-grid {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+#d-pad-container {display: flex !important;}
+#d-pad {display: grid !important;}
+#top-button-icons {display: flex !important;}
+.bottom-buttons-grid {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 50px;
+    gap: 20px;
+}
+}
