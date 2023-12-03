@@ -368,6 +368,29 @@ a.big-text {
   background-color: #dbdada;
 }
 
+.cell {
+  width: 30px;
+  height: 20px;
+  aspect-ratio: 1;
+  border: 1px solid #ddd;
+}
+
+.snake {
+  background-color: green;
+}
+
+.food {
+  background-color: red;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  padding: 0;
+}
+
 @media screen and (min-width: 900px) {
   .mobile {
     display: none !important;
