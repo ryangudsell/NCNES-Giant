@@ -224,32 +224,6 @@ a.big-text {
   background-color: #dbdada;
 }
 
-.snake-mobile-buttons {
-  display: none;
-}
-
-.game-border {
-  position: relative;
-  width: 100% !important;
-}
-.game-border div {
-  width: 5% !important;
-}
-.game-border div.game-splash {
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.game-border div.game-splash div {
-  font-size: 36px;
-  width: 100% !important;
-}
-.game-border div.game-splash button {
-  font-family: "Press Start 2P";
-  font-size: 18px;
-}
-
 #d-pad-container {
   display: flex;
   justify-content: center;
