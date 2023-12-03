@@ -205,9 +205,27 @@
 display: none;
 }
 .game-border{
+    position: relative;
     width: 100%!important;
     div {
         width: 5% !important;
+        
+        &.game-splash {
+            top: 0;
+            left: 0;
+            
+            width: 100% !important;
+            background-color: rgba(0, 0, 0, 0.8);
+
+            div {
+                font-size: 36px;
+                width: 100% !important;
+            }
+            button {
+                font-family: 'Press Start 2P';
+                font-size: 18px;
+            }
+        }
     }
 }
 
