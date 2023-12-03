@@ -12,12 +12,12 @@ const Policy = () => {
       <p>When you access our website, certain information may be automatically collected, such as your IP address, browser type, device information, and browsing behavior using cookies and similar technologies. Additionally, we may collect personal information, including but not limited to name, contact details, and payment information when you make a purchase or communicate with us through our contact form or customer support channels.</p>
 
       <h5>Use of Information</h5>
-      <p>The information collected is utilized for various purposes, including:
+      <p>The information collected is utilized for various purposes, including:</p>
       <ul>
-        <li>Product Fulfillment: To process and fulfill your orders for our video games.</li>
-        <li>Communication: To respond to inquiries, provide support, and inform you about updates, promotions, or changes to our services.</li>
-        <li>Improvement of Services: To enhance our website functionality, tailor user experience, and analyze trends in user behavior.</li>
-      </ul></p>
+        <li><p>Product Fulfillment: To process and fulfill your orders for our video games.</p></li>
+        <li><p>Communication: To respond to inquiries, provide support, and inform you about updates, promotions, or changes to our services.</p></li>
+        <li><p>Improvement of Services: To enhance our website functionality, tailor user experience, and analyze trends in user behavior.</p></li>
+      </ul>
 
       <h5>Data Sharing</h5>
       <p>We do not sell or rent your personal information to third parties. However, we may share your data with trusted service providers or partners who assist us in delivering our services or processing transactions on our behalf. We ensure that these entities adhere to strict confidentiality and data protection standards.</p>
