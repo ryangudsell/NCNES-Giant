@@ -228,6 +228,13 @@ a.big-text {
   display: none;
 }
 
+.game-border {
+  width: 100% !important;
+}
+.game-border div {
+  width: 5% !important;
+}
+
 #d-pad-container {
   display: flex;
   justify-content: center;
