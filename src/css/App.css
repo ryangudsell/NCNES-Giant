@@ -368,7 +368,15 @@ a.big-text {
   background-color: #dbdada;
 }
 
-@media screen and (min-width: 900px) {
+.snake-mobile-buttons {
+  display: none;
+}
+
+.game-border {
+  width: 100% !important;
+  height: 100% !important;
+
+ @media screen and (min-width: 900px) {
   .mobile {
     display: none !important;
   }
