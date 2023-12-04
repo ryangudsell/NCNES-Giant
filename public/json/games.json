@@ -1,0 +1,12 @@
+{
+    "games": [
+        {
+            "id": 0,
+            "name": "snake"
+        },
+        {
+            "id": 1,
+            "name": "frogger"
+        }
+    ]
+}

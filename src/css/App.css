@@ -368,6 +368,48 @@ a.big-text {
   background-color: #dbdada;
 }
 
+.shop-grid {
+  display: grid;
+  grid-template-columns: 20px auto 80px;
+  gap: 15px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px dashed black;
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer;
+}
+.shop-grid.is-dark {
+  border-bottom: 2px dashed white;
+}
+.shop-grid .price {
+  text-align: right;
+}
+.shop-grid img {
+  width: 20px;
+}
+
+.product-container {
+  min-height: calc(100% - 10px);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: auto auto;
+  grid-template-areas: "img desc" "price desc";
+  gap: 15px;
+}
+.product-grid .product-image {
+  grid-area: img;
+  width: 100%;
+}
+.product-grid .product-price {
+  grid-area: price;
+  text-align: center;
+}
+.product-grid .product-desc {
+  grid-area: desc;
+}
+
 .cell {
   width: 30px;
   height: 20px;
