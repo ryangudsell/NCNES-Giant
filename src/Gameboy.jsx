@@ -39,10 +39,10 @@ const Gameboy = () => {
           </ul>
         </article>
         <Screen />
-        <label id='gameboy-label' className='tablet'><img src="./logo.png" alt='Giant Logo' />Giant </label>
+        <label id='gameboy-label' className='tablet'><img src="./img/logo.png" alt='Giant Logo' />Giant </label>
       </section>
       </div>
-      <label id='gameboy-label' className='mobile'><img src="./logo.png" alt='Giant Logo' />Giant </label>
+      <label id='gameboy-label' className='mobile'><img src="./img/logo.png" alt='Giant Logo' />Giant </label>
       <section id='buttons-container' className='mobile'>
         <article id='top-buttons'>
           <div id='d-pad'>

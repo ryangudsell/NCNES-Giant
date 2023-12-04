@@ -1,0 +1,46 @@
+{
+    "products": [
+        {
+            "id": 0,
+            "title": "Galactic Odyssey",
+            "price": "$69.99",
+            "imageUrl": "../img/products/galactic_odyssey.png",
+            "description": "Embark on an interstellar adventure in this classic space-themed action game. Explore distant planets and battle alien creatures."
+        },
+        {
+            "id": 1,
+            "title": "Cryptic Quest",
+            "price": "$79.99",
+            "imageUrl": "../img/products/cryptic_quest.png",
+            "description": "Unravel mysteries and solve puzzles in a medieval fantasy world. This game offers a gripping storyline and challenging quests."
+        },
+        {
+            "id": 2,
+            "title": "Pixelated Pursuit",
+            "price": "$89.99",
+            "imageUrl": "../img/products/pixelated_pursuit.png",
+            "description": "Navigate through a retro-styled cityscape, dodging obstacles and collecting treasures. A fast-paced and addictive arcade game."
+        },
+        {
+            "id": 3,
+            "title": "Eternal Legends",
+            "price": "$99.99",
+            "imageUrl": "../img/products/eternal_legends.png",
+            "description": "Immerse yourself in a mythical world filled with legendary creatures and epic battles. A role-playing game of epic proportions."
+        },
+        {
+            "id": 4,
+            "title": "Aurora Blade",
+            "price": "$119.99",
+            "imageUrl": "../img/products/aurora_blade.png",
+            "description": "Master the ancient art of swordsmanship in a mesmerizing fantasy realm. An action-packed adventure awaits in this classic title."
+        },
+        {
+            "id": 5,
+            "title": "Retro Racers",
+            "price": "$59.99",
+            "imageUrl": "../img/products/retro_racers.png",
+            "description": "Compete in high-speed races across diverse landscapes with vintage cars. Enjoy multiplayer modes and unlockable vehicles."
+        }
+    ]
+}
