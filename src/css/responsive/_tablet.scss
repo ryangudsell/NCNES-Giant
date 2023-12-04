@@ -81,4 +81,24 @@
     padding-top: 50px;
     gap: 20px;
 }
+
+.shop-grid {
+    grid-template-columns: 20px auto 80px;
+    gap: 15px;
+
+    .price {text-align: center;}
+
+}
+
+.product-grid {
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto auto;
+    grid-template-areas: "img desc" "price desc";
+    gap: 15px;
+
+    .product-image {grid-area: img; width: 100%;}
+    .product-price {grid-area: price; text-align: center;}
+    .product-desc {grid-area: desc;}
+}
+
 }

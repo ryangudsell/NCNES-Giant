@@ -28,6 +28,10 @@ const Contact = () => {
           <textarea rows={10} name='message' className='nes-textarea darkmode-toggle is-dark'
             style={{resize: 'none'}} />
         </div>
+
+        <div className='nes-field'><br />
+          <button className='nes-btn' type='button'>Submit</button>
+        </div>
       </form>
     </div>
   )
