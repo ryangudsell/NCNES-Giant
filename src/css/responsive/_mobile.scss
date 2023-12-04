@@ -7,15 +7,28 @@
     border-radius: 10px 10px 30px 10px;
 }
 
-// Gameboy Styles
+#root, body {
+    overflow: hidden !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    margin: 0;
+    padding: 0;
+}
+
 #root {
     display: flex;
     width: 100%;
-    min-height: 100vh;
     height: 100%;
     justify-content: center;
     align-items: center;
 }
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+// Gameboy Styles
 
 #gameboy {
     background-color: $gameboy-grey;
@@ -24,6 +37,7 @@
     height: 100vh;
     max-height: 675px !important;
     padding: 10px;
+    overflow: hidden;
 
     #screen-container {
         background-color: $main-grey;
@@ -323,11 +337,11 @@
     font-family: Arial;
     border-radius: 30px;
     background-color: $main-grey;
+    color: $dark-grey;
     a {
-        color: $black;
+        color: $dark-grey;
     }
-    color: $black;
-    padding: 8px 10px 10px;
+    padding: 8px 15px 10px;
     border: 3px solid;
     border-color: $black;
     border-right-color: #3e3e3e;
@@ -339,10 +353,9 @@
 }
 
 .cell {
-    width: 30px;
-    height: 20px;
-    aspect-ratio: 1;
     border: 1px solid #ddd;
+    padding: 0;
+    aspect-ratio: 1/1;
 }
  
 .snake {
@@ -351,26 +364,6 @@
  
 .food {
     background-color: red;
-}
- 
-table {
-    border-collapse: collapse;
-}
- 
-td {
-    padding: 0;
-}
-
-/* Frogger.css */
-
-table {
-    border-collapse: collapse;
-}
-
-.cell {
-    width: 30px;
-    height: 30px;
-    background-color: #6d6d6d;
 }
 
 .frog {
@@ -383,4 +376,19 @@ table {
 
 .log {
     background-color: #2196f3;
+}
+ 
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-height: 100%;
+}
+
+tbody {
+    width: 100%;
+    height: 100%;
+}
+
+tr {
+    width: 100%;
 }
