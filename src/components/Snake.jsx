@@ -91,7 +91,7 @@ const SnakeGame = () => {
         alert('Game Over! Press OK to play again.');
         resetGame();
       }
-    }, 250);
+    }, 175);
 
     return () => clearInterval(handle);
   }, [snake, direction]);
@@ -102,7 +102,7 @@ const SnakeGame = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <table>
         <tbody>
           {Array.from({ length: ROWS }).map((_, rowIndex) => (
@@ -119,7 +119,7 @@ const SnakeGame = () => {
           ))}
         </tbody>
       </table>
-    </div>
+    </>
   );
 };
 
