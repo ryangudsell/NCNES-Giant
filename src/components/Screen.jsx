@@ -8,6 +8,7 @@ import Shop from "../pages/Shop"
 import Product from './Product'
 
 import SnakeGame from './Snake'
+import Frogger from './Frogger'
 
 const Screen = () => {
   return (
@@ -19,6 +20,7 @@ const Screen = () => {
         <Route path="/shop/products/:id" element={<Product />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path='/games/snake' element={<SnakeGame/>}/>
+        <Route exact path='/games/frogger' element={<Frogger/>}/>
       </Routes>
     </article>
   )

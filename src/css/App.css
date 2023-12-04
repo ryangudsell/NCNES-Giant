@@ -32,13 +32,25 @@ a.big-text {
   border-radius: 10px 10px 30px 10px;
 }
 
+#root, body {
+  overflow: hidden !important;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  margin: 0;
+  padding: 0;
+}
+
 #root {
   display: flex;
   width: 100%;
-  min-height: 100vh;
   height: 100%;
   justify-content: center;
   align-items: center;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
 }
 
 #gameboy {
@@ -48,6 +60,7 @@ a.big-text {
   height: 100vh;
   max-height: 675px !important;
   padding: 10px;
+  overflow: hidden;
 }
 #gameboy #screen-container {
   background-color: #cccccc;
@@ -353,8 +366,8 @@ a.big-text {
   font-family: Arial;
   border-radius: 30px;
   background-color: #cccccc;
-  color: black;
-  padding: 8px 10px 10px;
+  color: #888888;
+  padding: 8px 15px 10px;
   border: 3px solid;
   border-color: black;
   border-right-color: #3e3e3e;
@@ -362,7 +375,7 @@ a.big-text {
   cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer;
 }
 .bottom-buttons-spans a {
-  color: black;
+  color: #888888;
 }
 .bottom-buttons-spans:hover {
   background-color: #dbdada;
@@ -411,10 +424,9 @@ a.big-text {
 }
 
 .cell {
-  width: 30px;
-  height: 20px;
-  aspect-ratio: 1;
   border: 1px solid #ddd;
+  padding: 0;
+  aspect-ratio: 1/1;
 }
 
 .snake {
@@ -427,10 +439,40 @@ a.big-text {
 
 table {
   border-collapse: collapse;
+  width: 100%;
+  min-height: 100%;
 }
 
-td {
-  padding: 0;
+tbody {
+  width: 100%;
+  height: 100%;
+}
+
+tr {
+  width: 100%;
+}
+
+/* Frogger.css */
+table {
+  border-collapse: collapse;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  background-color: #6d6d6d;
+}
+
+.frog {
+  background-color: #4caf50;
+}
+
+.car {
+  background-color: #f44336;
+}
+
+.log {
+  background-color: #2196f3;
 }
 
 @media screen and (min-width: 900px) {
