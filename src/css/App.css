@@ -410,6 +410,29 @@ tr {
   width: 100%;
 }
 
+/* Frogger.css */
+table {
+  border-collapse: collapse;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  background-color: #6d6d6d;
+}
+
+.frog {
+  background-color: #4caf50;
+}
+
+.car {
+  background-color: #f44336;
+}
+
+.log {
+  background-color: #2196f3;
+}
+
 @media screen and (min-width: 900px) {
   .mobile {
     display: none !important;

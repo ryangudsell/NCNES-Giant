@@ -5,6 +5,7 @@ import Policy from "../pages/Policy"
 import Shop from "../pages/Shop"
 import Contact from "../pages/Contact"
 import SnakeGame from './Snake'
+import Frogger from './Frogger'
 
 const Screen = () => {
   return (
@@ -15,6 +16,7 @@ const Screen = () => {
         <Route exact path="/shop" element={<Shop />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path='/snake' element={<SnakeGame/>}/>
+        <Route exact path='/frogger' element={<Frogger/>}/>
       </Routes>
     </article>
   )
