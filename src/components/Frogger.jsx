@@ -143,7 +143,7 @@ const generateCars = () => {
   }, [direction]); // Add direction to dependency array to update the effect when direction changes
 
   return (
-    <div>
+    <>
       <table>
         <tbody>
           {Array.from({ length: ROWS }).map((_, rowIndex) => (
@@ -164,7 +164,7 @@ const generateCars = () => {
           ))}
         </tbody>
       </table>
-    </div>
+    </>
   );
 };
 
