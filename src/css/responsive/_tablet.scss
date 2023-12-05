@@ -82,6 +82,14 @@
     gap: 20px;
 }
 
+.featured-products {
+    div {
+        &:nth-child(2) p, &:last-child p {
+            font-size: 8px !important;
+        }
+    }
+}
+
 .shop-grid {
     grid-template-columns: 20px auto 80px;
     gap: 15px;

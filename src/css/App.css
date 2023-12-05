@@ -130,6 +130,9 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
+#buttons-container #top-buttons #d-pad #up:hover, #buttons-container #top-buttons #d-pad #down:hover, #buttons-container #top-buttons #d-pad #center:hover, #buttons-container #top-buttons #d-pad #left:hover, #buttons-container #top-buttons #d-pad #right:hover {
+  background-color: #dbdada;
+}
 #buttons-container #top-buttons #d-pad #up {
   border: 3px solid;
   border-bottom-style: none;
@@ -253,6 +256,9 @@ body {
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto auto;
 }
+#d-pad #up:hover, #d-pad #down:hover, #d-pad #center:hover, #d-pad #left:hover, #d-pad #right:hover {
+  background-color: #dbdada;
+}
 #d-pad #up {
   border: 3px solid;
   border-bottom-style: none;
@@ -338,7 +344,7 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 75px;
+  padding-bottom: 37.5px;
   color: #888888;
 }
 #top-button-icons a {
@@ -399,6 +405,36 @@ body {
 }
 .shop-grid img {
   width: 100%;
+}
+
+.featured-products {
+  margin-top: 100px;
+}
+.featured-products div {
+  width: 49%;
+  display: inline-block;
+  margin: 5px 0;
+  border-bottom: 2px dashed black;
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer;
+}
+.featured-products div.is-dark {
+  border-bottom: 2px dashed white;
+}
+.featured-products div img {
+  width: 100%;
+}
+.featured-products div p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.featured-products div:first-child {
+  width: 100%;
+}
+.featured-products div:last-child {
+  margin-left: 2%;
+}
+.featured-products div:nth-child(2) p, .featured-products div:last-child p {
+  font-size: 10px !important;
 }
 
 .product-container {
@@ -578,6 +614,9 @@ tr {
     align-items: center;
     padding-top: 50px;
     gap: 20px;
+  }
+  .featured-products div:nth-child(2) p, .featured-products div:last-child p {
+    font-size: 8px !important;
   }
   .shop-grid {
     grid-template-columns: 20px auto 80px;
