@@ -85,10 +85,8 @@ const Gameboy = () => {
             {/* Darkmode button */}
             <div>
             <button className='nes-btn' onClick={() => darkmodeToggle()}><MoonFill style={{imageRendering: "pixelated"}} /></button></div>
-            <div><button className='nes-btn' onClick={() => {
-              navigate("/")
-
-              }}><HouseDoorFill style={{imageRendering: "pixelated"}} /></button></div>
+            <div><button className='nes-btn' onClick={() => ThreeDToggle()}><Box style={{imageRendering: "pixelated"}} /></button></div>
+            <div><button className='nes-btn' onClick={() => navigate("/")}><HouseDoorFill style={{imageRendering: "pixelated"}} /></button></div>
           </ul>
         </article>
         <Screen />
