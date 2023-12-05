@@ -34,17 +34,41 @@ const SnakeGame = () => {
   const handleKeyPress = (e) => {
     switch (e.key) {
       case 'ArrowUp':
-        setDirection(Direction.UP);
-        break;
-      case 'ArrowDown':
-        setDirection(Direction.DOWN);
-        break;
-      case 'ArrowLeft':
-        setDirection(Direction.LEFT);
-        break;
-      case 'ArrowRight':
-        setDirection(Direction.RIGHT);
-        break;
+          setDirection(Direction.UP);
+          break;
+        case 'W':
+          setDirection(Direction.UP);
+          break;
+        case 'w':
+          setDirection(Direction.UP);
+          break;
+        case 'ArrowDown':
+          setDirection(Direction.DOWN);
+          break;
+        case 'S':
+          setDirection(Direction.DOWN);
+          break;
+        case 's':
+          setDirection(Direction.DOWN);
+          break;
+        case 'ArrowLeft':
+          setDirection(Direction.LEFT);
+          break;
+        case 'A':
+          setDirection(Direction.LEFT);
+          break;
+        case 'a':
+          setDirection(Direction.LEFT);
+          break;
+        case 'ArrowRight':
+          setDirection(Direction.RIGHT);
+          break;
+        case 'D':
+          setDirection(Direction.RIGHT);
+          break;
+        case 'd':
+          setDirection(Direction.RIGHT);
+          break;
       default:
         break;
     }
