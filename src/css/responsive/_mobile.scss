@@ -7,9 +7,8 @@
     border-radius: 10px 10px 30px 10px;
 }
 
-.steve-harvey {color: red;}
-
 #root, body {
+    background: linear-gradient(#675e9d, #9198e5);
     overflow: hidden !important;
     overflow-x: hidden !important;
     overflow-y: hidden !important;
@@ -40,6 +39,12 @@ body {
     max-height: 675px !important;
     padding: 10px;
     overflow: hidden;
+
+    &.three-d {
+        transform-style: preserve-3d;
+        transform: perspective(1000px) rotateX(1deg) rotateY(-5deg);
+        box-shadow: rgba(85, 85, 85) 5px 5px, rgba(85, 85, 85) 10px 5px, rgba(85, 85, 85) 15px 5px, rgba(85, 85, 85) 20px 5px, rgb(14, 14, 14, 0.1) 30px 10px 10px,rgba(85, 85, 85) 25px 5px;
+    }
 
     #screen-container {
         background-color: $main-grey;
@@ -490,4 +495,12 @@ tbody {
 
 tr {
     width: 100%;
+}
+
+#game-over {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

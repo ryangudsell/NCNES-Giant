@@ -14,6 +14,7 @@ const Direction = {
 const SnakeGame = () => {
   const [loading, setLoading] = useState(true)
   const [instructions, areInstructionsOn] = useState(true)
+  const [gameOver, isGameOver] = useState(false)
 
   useState(() => {
     const timer = setTimeout(() => {
@@ -113,6 +114,7 @@ const SnakeGame = () => {
   };
 
   const resetGame = () => {
+    isGameOver(false)
     setSnake([{ row: 0, col: 0 }]);
     setFood(generateRandomPosition());
     setDirection(Direction.RIGHT);
@@ -123,8 +125,7 @@ const SnakeGame = () => {
       moveSnake();
       if (checkCollision()) {
         clearInterval(handle);
-        alert('Game Over! Press OK to play again.');
-        resetGame();
+        isGameOver(true)
       }
     }, 175);
 
@@ -142,10 +143,20 @@ const SnakeGame = () => {
         <p className='title'>Snake</p>
         <h5>Instructions:</h5>
         {/* <p>Use WASD or the Arrow Keys to move</p> */}
-        <p>Use WASD <span className='steve-harvey'>STEVE HARVEY</span> the Arrow Keys to move</p>
-        <p><span className='steve-harvey'>STEVE HARVEY</span> the <span>Red Squares</span></p>
+        <p>Use WASD and the Arrow Keys to move</p>
+        <p>Eat the <span>Red Squares</span></p>
         <button className='nes-btn'
           onClick={() => areInstructionsOn(false)}>Begin</button>
+      </div>
+    )
+  }
+
+  const GameOver = () => {
+    return (
+      <div id="game-over" className='nes-container darkmode-toggle is-dark instructions'>
+        <h5><span className='red'>Game Over!</span></h5>
+        <p>Press 'Restart' to play again.</p>
+        <button className='nes-btn' onClick={() => resetGame()}>Restart</button>        
       </div>
     )
   }
@@ -156,7 +167,10 @@ const SnakeGame = () => {
     <Loading />
     : 
     <>
-    {instructions ? <Instructions /> :
+    {instructions ? <Instructions /> 
+    : 
+    <>
+    {gameOver ? <GameOver /> :
     <table>
         <tbody>
           {Array.from({ length: ROWS }).map((_, rowIndex) => (
@@ -173,7 +187,7 @@ const SnakeGame = () => {
           ))}
         </tbody>
       </table>
-    }</>}
+    }</>}</>}
     </>
   );
 };

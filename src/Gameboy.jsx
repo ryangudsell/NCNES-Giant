@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Screen from './components/Screen'
 import { Link, useNavigate } from 'react-router-dom'
-import { MoonFill, HouseDoorFill, InfoCircleFill, CartFill, TelephoneFill, CaretUpFill, CaretRightFill, CaretDownFill, CaretLeftFill, CircleFill } from 'react-bootstrap-icons'
+import { MoonFill, HouseDoorFill, InfoCircleFill, CartFill, TelephoneFill, CaretUpFill, CaretRightFill, CaretDownFill, CaretLeftFill, CircleFill, Box } from 'react-bootstrap-icons'
 import axios from 'axios'
 
 const Gameboy = () => {
@@ -13,6 +13,10 @@ const Gameboy = () => {
   const darkmodeToggle = () => {
     document.querySelectorAll(".darkmode-toggle").forEach(
       element => element.classList.toggle("is-dark"))
+  }
+
+  const ThreeDToggle = () => {
+    document.getElementById("gameboy").classList.toggle("three-d")
   }
 
   function changeZoom(zoomLevel) {
@@ -55,9 +59,20 @@ const Gameboy = () => {
     navigate(`/games/${gamesArray[gameIndex + 1].name}`)
   }
 
+  function simulateKeyPress(key) {
+    const event = new KeyboardEvent('keydown', {
+      key: key,
+      code: key === 'ArrowUp' ? 'ArrowUp' : key === 'ArrowDown' ? 'ArrowDown' : key === 'ArrowLeft' ? 'ArrowLeft' : key === 'ArrowRight' ? 'ArrowRight' : '',
+      keyCode: key === 'ArrowUp' ? 38 : key === 'ArrowDown' ? 40 : key === 'ArrowLeft' ? 37 : key === 'ArrowRight' ? 39 : undefined,
+      which: key === 'ArrowUp' ? 38 : key === 'ArrowDown' ? 40 : key === 'ArrowLeft' ? 37 : key === 'ArrowRight' ? 39 : undefined,
+    });
+    console.log(`Simulated key press: ${key}`);
+    window.dispatchEvent(event);
+  }
+
   return (
     <>
-      <main id='gameboy' className='gameboy-corner'>
+      <main id='gameboy' className='gameboy-corner three-d'>
       <section id='screen-container' className='gameboy-corner mobile'>
         <article id='settings-container'>
           <ul>
@@ -89,8 +104,8 @@ const Gameboy = () => {
                 onClick={() => changeZoom(-0.1)}>-</button>
             </div>
             {/* Darkmode button */}
-            <div>
-            <button className='nes-btn' onClick={() => darkmodeToggle()}><MoonFill style={{imageRendering: "pixelated"}} /></button></div>
+            <div><button className='nes-btn' onClick={() => darkmodeToggle()}><MoonFill style={{imageRendering: "pixelated"}} /></button></div>
+            <div><button className='nes-btn' onClick={() => ThreeDToggle()}><Box style={{imageRendering: "pixelated"}} /></button></div>
             <div><button className='nes-btn' onClick={() => navigate("/")}><HouseDoorFill style={{imageRendering: "pixelated"}} /></button></div>
           </ul>
         </article>
@@ -103,11 +118,13 @@ const Gameboy = () => {
         <article id='top-buttons'>
           <div id='d-pad'>
             <div/>
-            <div id='up' className='d-pad button-hover'>
+            <div id='up' className='d-pad button-hover'
+            onClick={() => simulateKeyPress('ArrowUp')}>
               <CaretUpFill style={{imageRendering: "pixelated"}} />
             </div>
             <div/>
-            <div id='left' className='d-pad button-hover'>
+            <div id='left' className='d-pad button-hover'
+            onClick={() => simulateKeyPress('ArrowLeft')}>
               <CaretLeftFill style={{imageRendering: "pixelated"}} />
             </div>
             <div id='center' className='d-pad button-hover'
@@ -118,11 +135,13 @@ const Gameboy = () => {
               <span className='center-dot dot-four' />
               <CircleFill style={{imageRendering: "pixelated"}} />
             </div>
-            <div id='right' className='d-pad button-hover'>
+            <div id='right' className='d-pad button-hover'
+            onClick={() => simulateKeyPress('ArrowRight')}>
               <CaretRightFill style={{imageRendering: "pixelated"}} />
             </div>
             <div/>
-            <div id='down' className='d-pad button-hover'>
+            <div id='down' className='d-pad button-hover'
+            onClick={() => simulateKeyPress('ArrowDown')}>
               <CaretDownFill style={{imageRendering: "pixelated"}} />
             </div>
             <div/>            
@@ -148,11 +167,13 @@ const Gameboy = () => {
       <div id='d-pad-container' className='dpad-grid tablet'>
         <div id='d-pad' className='dpad-grid tablet'>
         <div/>
-        <div id='up' className='d-pad button-hover'>
+        <div id='up' className='d-pad button-hover'
+        onClick={() => simulateKeyPress('ArrowUp')}>
           <CaretUpFill style={{imageRendering: "pixelated"}} />
         </div>
         <div/>
-        <div id='left' className='d-pad button-hover'>
+        <div id='left' className='d-pad button-hover'
+        onClick={() => simulateKeyPress('ArrowLeft')}>
           <CaretLeftFill style={{imageRendering: "pixelated"}} />
         </div>
         <div id='center' className='d-pad button-hover'
@@ -163,11 +184,13 @@ const Gameboy = () => {
           <span className='center-dot dot-four' />
           <CircleFill style={{imageRendering: "pixelated"}} />
         </div>
-        <div id='right' className='d-pad button-hover'>
+        <div id='right' className='d-pad button-hover'
+        onClick={() => simulateKeyPress('ArrowRight')}>
           <CaretRightFill style={{imageRendering: "pixelated"}} />
         </div>
         <div/>
-        <div id='down' className='d-pad button-hover'>
+        <div id='down' className='d-pad button-hover'
+        onClick={() => simulateKeyPress('ArrowDown')}>
           <CaretDownFill style={{imageRendering: "pixelated"}} />
         </div>
         <div/>            

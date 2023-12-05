@@ -28,7 +28,7 @@ const Shop = () => {
     <div className='nes-container with-title darkmode-toggle is-dark'>
       <p className='title'>Shop</p>
       {/* <p>Welcome to the shop</p> */}
-      <p>Welcome to the <span className='steve-harvey'>STEVE HARVEY</span></p>
+      <p>Welcome to the Shop</p>
       <article className='nes-container darkmode-toggle is-dark shop-grid-container'>
         {products?.map((product) => {
           return (

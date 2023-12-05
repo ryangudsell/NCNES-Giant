@@ -14,6 +14,7 @@ const Direction = {
 const FroggerGame = () => {
   const [loading, setLoading] = useState(true)
   const [instructions, areInstructionsOn] = useState(true)
+  const [gameOver, isGameOver] = useState(false)
 
   useState(() => {
     const timer = setTimeout(() => {
@@ -143,11 +144,12 @@ const generateCars = () => {
     // Check collision with cars
     if (cars.some((car) => car.row === frog.row && car.col === frog.col)) {
       // Game over logic
-      resetGame();
+      isGameOver(true)
     }
   };
 
   const resetGame = () => {
+    isGameOver(false)
     setFrog({ row: ROWS - 1, col: Math.floor(COLS / 2) });
     setCars([]);
     setDirection(null);
@@ -182,12 +184,20 @@ const generateCars = () => {
       <div id='instructions' className='nes-container darkmode-toggle is-dark with-title instructions'>
         <p className='title'>Frogger</p>
         <h5>Instructions:</h5>
-        {/* <p>Use WASD or the Arrow Keys to move</p> */}
-        <p>Use WASD <span className='steve-harvey'>STEVE HARVEY</span> the Arrow Keys to <span className='steve-harvey'>STEVE HARVEY</span></p>
+        <p>Use WASD or the Arrow Keys to move</p>
         <p>Avoid the <span>Red Squares</span></p>
         <button className='nes-btn'
-          onClick={() => areInstructionsOn(false)}><span className='steve-harvey'>STEVE HARVEY</span></button>
-          {/* onClick={() => areInstructionsOn(false)}>Begin</button> */}
+          onClick={() => areInstructionsOn(false)}>Begin</button>
+      </div>
+    )
+  }
+
+  const GameOver = () => {
+    return (
+      <div id="game-over" className='nes-container darkmode-toggle is-dark instructions'>
+        <h5><span className='red'>Game Over!</span></h5>
+        <p>Press 'Restart' to play again.</p>
+        <button className='nes-btn' onClick={() => resetGame()}>Restart</button>        
       </div>
     )
   }
@@ -200,6 +210,10 @@ const generateCars = () => {
     <>
     {instructions ?
     <Instructions />
+    :
+    <>
+    {gameOver ? 
+    <GameOver />
     :
     <table>
         <tbody>
@@ -221,7 +235,7 @@ const generateCars = () => {
           ))}
         </tbody>
       </table>
-      }</>}
+      }</>}</>}
     </>
   );
 };

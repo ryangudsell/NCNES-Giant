@@ -28,7 +28,7 @@ const Home = () => {
     <div className='nes-container with-title darkmode-toggle is-dark'>
       <p className='title'>Home</p>
       {/* <p>Welcome to the Home page</p> */}
-      <p>Welcome to the <span className='steve-harvey'>STEVE HARVEY</span> page</p>
+      <p>Welcome to the Home page</p>
       <button className='nes-btn'
       onClick={() => navigate("/contact")}>Contact</button>
       <button className='nes-btn'
