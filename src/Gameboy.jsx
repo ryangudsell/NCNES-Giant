@@ -1,9 +1,14 @@
+import { useState, useEffect } from 'react'
 import Screen from './components/Screen'
 import { Link, useNavigate } from 'react-router-dom'
 import { MoonFill, HouseDoorFill, InfoCircleFill, CartFill, TelephoneFill, CaretUpFill, CaretRightFill, CaretDownFill, CaretLeftFill, CircleFill } from 'react-bootstrap-icons'
+import axios from 'axios'
 
 const Gameboy = () => {
   const navigate = useNavigate()
+
+  const [gamesArray, setGamesArray] = useState([])
+  const [gameIndex, setGameIndex] = useState(0)
 
   const darkmodeToggle = () => {
     document.querySelectorAll(".darkmode-toggle").forEach(
@@ -32,6 +37,24 @@ const Gameboy = () => {
     window.scrollTo(newScrollX, newScrollY);
   }
 
+  useEffect(() => {
+    axios.get("./json/games.json")
+    .then((res) => {
+      setGamesArray(res.data.games)
+    })
+    .catch((err) => console.log(err))
+  }, [])
+
+  const GameChanger = () => {
+    setGameIndex(gameIndex + 1)
+    if (gameIndex >= (gamesArray.length - 1)) {
+      setGameIndex(0)
+      navigate("/")
+      return
+    }
+    navigate(`/games/${gamesArray[gameIndex + 1].name}`)
+  }
+
   return (
     <>
       <main id='gameboy' className='gameboy-corner'>
@@ -47,7 +70,10 @@ const Gameboy = () => {
             {/* Darkmode button */}
             <div>
             <button className='nes-btn' onClick={() => darkmodeToggle()}><MoonFill style={{imageRendering: "pixelated"}} /></button></div>
-            <div><button className='nes-btn' onClick={() => navigate("/")}><HouseDoorFill style={{imageRendering: "pixelated"}} /></button></div>
+            <div><button className='nes-btn' onClick={() => {
+              navigate("/")
+
+              }}><HouseDoorFill style={{imageRendering: "pixelated"}} /></button></div>
           </ul>
         </article>
         <Screen />
@@ -84,7 +110,8 @@ const Gameboy = () => {
             <div id='left' className='d-pad button-hover'>
               <CaretLeftFill style={{imageRendering: "pixelated"}} />
             </div>
-            <div id='center' className='d-pad button-hover'>
+            <div id='center' className='d-pad button-hover'
+              onClick={() => GameChanger()}>
               <span className='center-dot dot-one' />
               <span className='center-dot dot-two' />
               <span className='center-dot dot-three' />
@@ -128,7 +155,8 @@ const Gameboy = () => {
         <div id='left' className='d-pad button-hover'>
           <CaretLeftFill style={{imageRendering: "pixelated"}} />
         </div>
-        <div id='center' className='d-pad button-hover'>
+        <div id='center' className='d-pad button-hover'
+              onClick={() => GameChanger()}>
           <span className='center-dot dot-one' />
           <span className='center-dot dot-two' />
           <span className='center-dot dot-three' />

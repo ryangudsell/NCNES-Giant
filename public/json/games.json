@@ -2,10 +2,14 @@
     "games": [
         {
             "id": 0,
-            "name": "snake"
+            "name": "default"
         },
         {
             "id": 1,
+            "name": "snake"
+        },
+        {
+            "id": 2,
             "name": "frogger"
         }
     ]
