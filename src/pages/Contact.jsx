@@ -13,13 +13,14 @@ const Contact = () => {
       <p className='title'>Contact</p>
       <p>Contact Us below:</p>
       <button className='nes-btn'>000 000 0000</button>
-      <button className='nes-btn' href="mailto:info@giant.com">info@giant.com</button>
+      {/* <button className='nes-btn' href="mailto:info@giant.com">info@giant.com</button> */}
+      <button className='nes-btn' href="mailto:info@giant.com"><span className='steve-harvey'>STEVE HARVEY</span>@giant.com</button>
       {submitted ? 
       <p>Thanks for submitting!</p>
       :
       <form>
         <div className='nes-field'>
-          <label name='name'>Name</label>
+          <label name='name'><span className='steve-harvey'>STEVE HARVEY</span></label>
           <input type="text" name='name' className='nes-input darkmode-toggle is-dark' />
         </div>
 

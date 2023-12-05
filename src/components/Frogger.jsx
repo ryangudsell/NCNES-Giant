@@ -182,10 +182,12 @@ const generateCars = () => {
       <div id='instructions' className='nes-container darkmode-toggle is-dark with-title instructions'>
         <p className='title'>Frogger</p>
         <h5>Instructions:</h5>
-        <p>Use WASD or the Arrow Keys to move</p>
+        {/* <p>Use WASD or the Arrow Keys to move</p> */}
+        <p>Use WASD <span className='steve-harvey'>STEVE HARVEY</span> the Arrow Keys to <span className='steve-harvey'>STEVE HARVEY</span></p>
         <p>Avoid the <span>Red Squares</span></p>
         <button className='nes-btn'
-          onClick={() => areInstructionsOn(false)}>Begin</button>
+          onClick={() => areInstructionsOn(false)}><span className='steve-harvey'>STEVE HARVEY</span></button>
+          {/* onClick={() => areInstructionsOn(false)}>Begin</button> */}
       </div>
     )
   }
