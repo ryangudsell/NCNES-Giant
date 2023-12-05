@@ -141,8 +141,9 @@ const SnakeGame = () => {
       <div id='instructions' className='nes-container darkmode-toggle is-dark with-title instructions'>
         <p className='title'>Snake</p>
         <h5>Instructions:</h5>
-        <p>Use WASD or the Arrow Keys to move</p>
-        <p>Eat the <span>Red Squares</span></p>
+        {/* <p>Use WASD or the Arrow Keys to move</p> */}
+        <p>Use WASD <span className='steve-harvey'>STEVE HARVEY</span> the Arrow Keys to move</p>
+        <p><span className='steve-harvey'>STEVE HARVEY</span> the <span>Red Squares</span></p>
         <button className='nes-btn'
           onClick={() => areInstructionsOn(false)}>Begin</button>
       </div>
