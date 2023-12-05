@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from "axios"
+import Loading from '../components/Loading'
 
 const Shop = () => {
   const navigate = useNavigate()
@@ -12,14 +13,17 @@ const Shop = () => {
     axios.get("./json/products.json")
     .then((res) => {
       setProducts(res.data.products)
-      setLoading(false)
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 2000)
+      return () => clearTimeout(timer)
     })
     .catch((err) => console.log(err))
   }, [])
 
   return (
     <>{loading ? 
-    <>Loading...</>
+    <Loading />
     :
     <div className='nes-container with-title darkmode-toggle is-dark'>
       <p className='title'>Shop</p>

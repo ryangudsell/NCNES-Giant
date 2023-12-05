@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Loading from './Loading';
 
 const ROWS = 13;
 const COLS = 16;
@@ -11,6 +12,15 @@ const Direction = {
 };
 
 const FroggerGame = () => {
+  const [loading, setLoading] = useState(true)
+
+  useState(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000)
+    return () => clearTimeout(timer)
+  }, [])
+
   const generateRandomPosition = () => {
     const row = Math.floor(Math.random() * ROWS);
     const col = Math.floor(Math.random() * COLS);
@@ -144,7 +154,10 @@ const generateCars = () => {
 
   return (
     <>
-      <table>
+    {loading ? 
+    <Loading /> 
+    : 
+    <table>
         <tbody>
           {Array.from({ length: ROWS }).map((_, rowIndex) => (
             <tr key={rowIndex}>
@@ -163,7 +176,7 @@ const generateCars = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table>}
     </>
   );
 };

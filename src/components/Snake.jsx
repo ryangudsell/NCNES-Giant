@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Loading from './Loading';
 
 const ROWS = 13;
 const COLS = 20;
@@ -11,6 +12,15 @@ const Direction = {
 };
 
 const SnakeGame = () => {
+  const [loading, setLoading] = useState(true)
+
+  useState(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000)
+    return () => clearTimeout(timer)
+  }, [])
+
   const generateRandomPosition = () => {
     const row = Math.floor(Math.random() * ROWS);
     const col = Math.floor(Math.random() * COLS);
@@ -103,7 +113,10 @@ const SnakeGame = () => {
 
   return (
     <>
-      <table>
+    {loading ? 
+    <Loading />
+    : 
+    <table>
         <tbody>
           {Array.from({ length: ROWS }).map((_, rowIndex) => (
             <tr key={rowIndex}>
@@ -118,7 +131,7 @@ const SnakeGame = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table>}
     </>
   );
 };

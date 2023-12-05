@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import Loading from './Loading'
 
 const Product = () => {
   const {id} = useParams()
@@ -12,13 +13,17 @@ const Product = () => {
     axios.get(`./json/products.json`)
     .then((res) => {
         setProduct(res.data.products[id])
-        setLoading(false)
+        const timer = setTimeout(() => {
+          setLoading(false);
+        }, 2000)
+        return () => clearTimeout(timer)
     })
-  }, [])
+    .catch((err) => console.log(err))
+  }, [id])
 
   return (
     <>{loading ? 
-    <></>
+    <Loading />
     :
     <div className='nes-container with-title darkmode-toggle is-dark product-container'>
         <p className='title'>{product.title}</p>

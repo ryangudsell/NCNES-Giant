@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Contact = () => {
+  const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState(false)
+
+  const onSubmit = () => {
+    setSubmitted(true)
+  }
+
   return (
     <div className='nes-container with-title darkmode-toggle is-dark'>
       <p className='title'>Contact</p>
       <p>Contact Us below:</p>
       <button className='nes-btn'>000 000 0000</button>
       <button className='nes-btn' href="mailto:info@giant.com">info@giant.com</button>
+      {submitted ? 
+      <p>Thanks for submitting!</p>
+      :
       <form>
         <div className='nes-field'>
           <label name='name'>Name</label>
@@ -30,9 +40,10 @@ const Contact = () => {
         </div>
 
         <div className='nes-field'><br />
-          <button className='nes-btn' type='button'>Submit</button>
+          <button className='nes-btn' type='button'
+            onClick={() => onSubmit()}>Submit</button>
         </div>
-      </form>
+      </form>}
     </div>
   )
 }

@@ -10,14 +10,40 @@ const Gameboy = () => {
       element => element.classList.toggle("is-dark"))
   }
 
+  function changeZoom(zoomLevel) {
+    const currentZoom = document.body.style.zoom || 1;
+    const newZoom = parseFloat(currentZoom) + zoomLevel;
+  
+    // Get the current scroll positions
+    const scrollX = typeof window.scrollX === 'undefined' ? window.pageXOffset : window.scrollX;
+    const scrollY = typeof window.scrollY === 'undefined' ? window.pageYOffset : window.scrollY;
+  
+    // Calculate the center of the window
+    const windowCenterX = window.innerWidth / 2;
+    const windowCenterY = window.innerHeight / 2;
+  
+    // Calculate the scroll position after zoom
+    const newScrollX = ((scrollX + windowCenterX) * newZoom - windowCenterX);
+    const newScrollY = ((scrollY + windowCenterY) * newZoom - windowCenterY);
+  
+    document.body.style.zoom = newZoom;
+    
+    // Scroll to the new position after zoom
+    window.scrollTo(newScrollX, newScrollY);
+  }
+
   return (
     <>
       <main id='gameboy' className='gameboy-corner'>
       <section id='screen-container' className='gameboy-corner mobile'>
         <article id='settings-container'>
           <ul>
-            <div><button className='nes-btn'>+</button>
-              <button className='nes-btn'>-</button></div>
+            <div>
+              <button className='nes-btn'
+                onClick={() => changeZoom(0.1)}>+</button>
+              <button className='nes-btn'
+                onClick={() => changeZoom(-0.1)}>-</button>
+            </div>
             {/* Darkmode button */}
             <div>
             <button className='nes-btn' onClick={() => darkmodeToggle()}><MoonFill style={{imageRendering: "pixelated"}} /></button></div>
@@ -30,8 +56,12 @@ const Gameboy = () => {
       <section id='screen-container' className='gameboy-corner'>
         <article id='settings-container'>
           <ul>
-            <div><button className='nes-btn'>+</button>
-              <button className='nes-btn'>-</button></div>
+            <div>
+              <button className='nes-btn'
+                onClick={() => changeZoom(0.1)}>+</button>
+              <button className='nes-btn'
+                onClick={() => changeZoom(-0.1)}>-</button>
+            </div>
             {/* Darkmode button */}
             <div>
             <button className='nes-btn' onClick={() => darkmodeToggle()}><MoonFill style={{imageRendering: "pixelated"}} /></button></div>

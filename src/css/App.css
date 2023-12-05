@@ -423,6 +423,15 @@ body {
   grid-area: desc;
 }
 
+.loading {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .cell {
   border: 1px solid #ddd;
   padding: 0;
