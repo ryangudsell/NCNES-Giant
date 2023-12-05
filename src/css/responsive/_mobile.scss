@@ -81,6 +81,7 @@ body {
     overflow-y: scroll;
     background-color: $black;
     color: $white;
+    position: relative;
     &.is-dark {
         background-color: $white;
         color: $black;
@@ -394,6 +395,18 @@ body {
     text-align: center;
 }
 
+.instructions {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 97%;
+    height: 97%;
+
+    span {
+        color: red;
+    }
+}
+
 .cell {
     border: 1px solid #ddd;
     padding: 0;
@@ -409,11 +422,11 @@ body {
 }
 
 .frog {
-    background-color: #4caf50;
+    background-color: green;
 }
 
 .car {
-    background-color: #f44336;
+    background-color: red;
 }
 
 .log {

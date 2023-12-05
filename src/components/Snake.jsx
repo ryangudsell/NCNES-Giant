@@ -13,6 +13,7 @@ const Direction = {
 
 const SnakeGame = () => {
   const [loading, setLoading] = useState(true)
+  const [instructions, areInstructionsOn] = useState(true)
 
   useState(() => {
     const timer = setTimeout(() => {
@@ -135,11 +136,26 @@ const SnakeGame = () => {
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, []);
 
+  const Instructions = () => {
+    return (
+      <div id='instructions' className='nes-container darkmode-toggle is-dark with-title instructions'>
+        <p className='title'>Snake</p>
+        <h5>Instructions:</h5>
+        <p>Use WASD or the Arrow Keys to move</p>
+        <p>Eat the <span>Red Squares</span></p>
+        <button className='nes-btn'
+          onClick={() => areInstructionsOn(false)}>Begin</button>
+      </div>
+    )
+  }
+
   return (
     <>
     {loading ? 
     <Loading />
     : 
+    <>
+    {instructions ? <Instructions /> :
     <table>
         <tbody>
           {Array.from({ length: ROWS }).map((_, rowIndex) => (
@@ -155,7 +171,8 @@ const SnakeGame = () => {
             </tr>
           ))}
         </tbody>
-      </table>}
+      </table>
+    }</>}
     </>
   );
 };

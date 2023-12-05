@@ -13,6 +13,7 @@ const Direction = {
 
 const FroggerGame = () => {
   const [loading, setLoading] = useState(true)
+  const [instructions, areInstructionsOn] = useState(true)
 
   useState(() => {
     const timer = setTimeout(() => {
@@ -176,11 +177,28 @@ const generateCars = () => {
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, [direction]); // Add direction to dependency array to update the effect when direction changes
 
+  const Instructions = () => {
+    return (
+      <div id='instructions' className='nes-container darkmode-toggle is-dark with-title instructions'>
+        <p className='title'>Frogger</p>
+        <h5>Instructions:</h5>
+        <p>Use WASD or the Arrow Keys to move</p>
+        <p>Avoid the <span>Red Squares</span></p>
+        <button className='nes-btn'
+          onClick={() => areInstructionsOn(false)}>Begin</button>
+      </div>
+    )
+  }
+
   return (
     <>
     {loading ? 
     <Loading /> 
     : 
+    <>
+    {instructions ?
+    <Instructions />
+    :
     <table>
         <tbody>
           {Array.from({ length: ROWS }).map((_, rowIndex) => (
@@ -200,7 +218,8 @@ const generateCars = () => {
             </tr>
           ))}
         </tbody>
-      </table>}
+      </table>
+      }</>}
     </>
   );
 };
