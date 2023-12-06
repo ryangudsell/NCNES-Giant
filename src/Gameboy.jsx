@@ -72,7 +72,7 @@ const Gameboy = () => {
 
   return (
     <>
-      <main id='gameboy' className='gameboy-corner three-d'>
+      <main id='gameboy' className='gameboy-corner'>
       <section id='screen-container' className='gameboy-corner mobile'>
         <article id='settings-container'>
           <ul>
